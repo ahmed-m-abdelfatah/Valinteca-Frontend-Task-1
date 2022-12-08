@@ -46,7 +46,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  max-height: 100vh;
+  padding: 200px 100px;
 
   .page {
     background-color: map-get($map: $colors, $key: bg);
@@ -69,7 +70,6 @@ body {
   padding: 3.75rem;
   gap: 3.75rem;
   max-width: 80%;
-  min-height: 75%;
   background: map-get($map: $colors, $key: bg);
   border-radius: 0.625rem;
 
