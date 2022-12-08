@@ -3,6 +3,7 @@
 - [X] welcome screen ui
 - [ ] register screen ui
 - [ ] home screen ui
+- [ ] validation
 - [ ] api
 
 > may be some more tasks\
