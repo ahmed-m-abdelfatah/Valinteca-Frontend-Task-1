@@ -1,7 +1,7 @@
 # Valinteca-Frontend-Task-1
 
 - [X] welcome screen ui
-- [ ] register screen ui
+- [X] register screen ui
 - [ ] home screen ui
 - [ ] validation
 - [ ] api
