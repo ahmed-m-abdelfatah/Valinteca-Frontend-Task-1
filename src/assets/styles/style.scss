@@ -112,39 +112,50 @@ body {
 
       .form {
         .input-group {
-          position: relative;
           &:not(:last-of-type) {
             margin-bottom: 0.625rem;
           }
 
-          $icon: 1.875rem;
-          .icon {
-            position: absolute;
-            top: 50%;
-            #{$left}: calc($icon / 2);
-            width: $icon;
-            transform: translateY(-50%);
-          }
+          .field {
+            position: relative;
 
-          .input {
-            border: 0;
-            width: 100%;
-            height: 3.75rem;
-            background-color: map-get($map: $colors, $key: white);
-            padding-left: calc($icon * 2);
-            caret-color: map-get($map: $colors, $key: blue-alt);
-            border-radius: $border-radius;
+            $icon: 1.875rem;
+            .icon {
+              position: absolute;
+              top: 50%;
+              #{$left}: calc($icon / 2);
+              width: $icon;
+              transform: translateY(-50%);
+            }
 
-            &:focus {
-              &::placeholder {
-                opacity: 0;
+            .input {
+              border: 0;
+              width: 100%;
+              height: 3.75rem;
+              background-color: map-get($map: $colors, $key: white);
+              padding-left: calc($icon * 2);
+              caret-color: map-get($map: $colors, $key: blue-alt);
+              border-radius: $border-radius;
+
+              &:focus {
+                &::placeholder {
+                  opacity: 0;
+                }
               }
             }
           }
-        }
 
-        .error-msg {
-          color: map-get($map: $colors, $key: red);
+          .error-msg {
+            display: none;
+            color: map-get($map: $colors, $key: red);
+            text-align: $left;
+          }
+
+          &.error {
+            .error-msg {
+              display: block;
+            }
+          }
         }
       }
 
