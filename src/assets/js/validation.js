@@ -74,6 +74,22 @@ function areTwoPasswordsTheSame(pass1, pass2) {
   return false;
 }
 
+async function apiReq() {
+  let reqBody = {};
+  for (const key in inputs) {
+    const current = inputs[key];
+    reqBody = { ...reqBody, [current.name]: current.value };
+  }
+
+  console.log('reqBody', reqBody);
+  let res = await fetch('https://goldblv.com/api/hiring/tasks/register', {
+    mode: 'POST',
+    body: JSON.stringify(reqBody),
+  });
+
+  console.log('res', res);
+}
+
 // event
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -89,7 +105,7 @@ form.addEventListener('submit', e => {
     let check4 = areTwoPasswordsTheSame(inputs.password.value, inputs.cPassword.value);
 
     if (check1 && check2 && check3 && check4) {
-      // api call
+      apiReq();
       console.log('api call');
     }
   }
