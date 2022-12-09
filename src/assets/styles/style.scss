@@ -76,7 +76,7 @@ body {
 
     @include smMax {
       flex-direction: column;
-      min-width: 100vw;
+      width: 100vw;
       min-height: 100vh;
     }
 
