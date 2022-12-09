@@ -134,7 +134,17 @@ body {
             padding-left: calc($icon * 2);
             caret-color: map-get($map: $colors, $key: blue-alt);
             border-radius: $border-radius;
+
+            &:focus {
+              &::placeholder {
+                opacity: 0;
+              }
+            }
           }
+        }
+
+        .error-msg {
+          color: map-get($map: $colors, $key: red);
         }
       }
 
