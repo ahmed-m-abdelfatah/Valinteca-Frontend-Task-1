@@ -86,7 +86,7 @@ form.addEventListener('submit', e => {
     let check1 = isVaLidPattern(regex.username, inputs.username);
     let check2 = isVaLidPattern(regex.email, inputs.email);
     let check3 = isVaLidPattern(regex.password, inputs.password);
-    let check4 = areTwoPasswordsTheSame(inputs.password, inputs.cPassword);
+    let check4 = areTwoPasswordsTheSame(inputs.password.value, inputs.cPassword.value);
 
     if (check1 && check2 && check3 && check4) {
       // api call
