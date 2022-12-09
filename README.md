@@ -9,4 +9,5 @@
 
 > may be add some more other tasks in the future\
 > figma: [HERE](https://www.figma.com/file/6DeOGqcKRgnraPT9ivDqaR/Signup-Flow-UI-(Community)?node-id=)\
-> live: [HERE](https://ahmed-m-abdelfatah.github.io/Valinteca-Frontend-Task-1/build/)
+> live: [HERE](https://ahmed-m-abdelfatah.github.io/Valinteca-Frontend-Task-1/build/)\
+> wakatime: [HERE](https://wakatime.com/@ahmed_m_abdelfatah/projects/lghpxyynwu)
