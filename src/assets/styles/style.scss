@@ -59,7 +59,11 @@ body {
   justify-content: center;
   align-items: center;
   padding: 12.5rem 6.25rem;
-  max-height: 100vh;
+  min-height: 100vh;
+
+  @include smMax {
+    padding: 0;
+  }
 
   .wrapper {
     display: flex;
@@ -72,7 +76,6 @@ body {
 
     @include smMax {
       flex-direction: column;
-      justify-content: space-evenly;
       min-width: 100vw;
       min-height: 100vh;
     }
