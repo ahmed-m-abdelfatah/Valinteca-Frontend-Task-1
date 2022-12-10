@@ -82,17 +82,40 @@ async function apiReq() {
     reqBody = { ...reqBody, [current.name]: current.value };
   }
 
-  console.log('reqBody', reqBody);
-  let res = await fetch('https://goldblv.com/api/hiring/tasks/register', {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-    method: 'POST',
-    body: JSON.stringify(reqBody),
-  });
+  try {
+    let res = await fetch('https://goldblv.com/api/hiring/tasks/register', {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(reqBody),
+    });
 
-  console.log('res', res);
+    const data = await res.json();
+
+    if (res.ok) {
+      // save to local storage
+      // got to home page
+    } else {
+      throw data;
+    }
+  } catch (error) {
+    // show error from api
+    console.log('error from api', error);
+
+    if (error?.errors) {
+      const allErrors = error.errors;
+
+      for (const key in allErrors) {
+        if (Object.hasOwnProperty.call(inputs, key)) {
+          const errorMsg = allErrors[key];
+          const element = inputs[key];
+          showError(element, errorMsg.join(', '));
+        }
+      }
+    }
+  }
 }
 
 // event

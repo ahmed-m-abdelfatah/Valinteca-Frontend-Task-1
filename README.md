@@ -5,7 +5,9 @@
 - [X] home screen ui
 - [X] validation without any libraries
 - [X] api request
-- [ ] show api errors
+- [X] show api errors in frontend
+- [ ] save to local storage
+- [ ] go to home page
 - [ ] authentication on home.html
 - [ ] logout
 
