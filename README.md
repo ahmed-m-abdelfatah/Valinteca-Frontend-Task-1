@@ -6,12 +6,11 @@
 - [X] validation without any libraries
 - [X] api request
 - [X] show api errors in frontend
-- [ ] save to local storage
-- [ ] go to home page
-- [ ] authentication on home.html
-- [ ] logout
+- [X] save to local storage
+- [X] go to home page
+- [X] authentication on home.html
+- [X] logout
 
-> may be add some more other tasks in the future\
 > figma: [HERE](https://www.figma.com/file/6DeOGqcKRgnraPT9ivDqaR/Signup-Flow-UI-(Community)?node-id=)\
 > live: [HERE](https://ahmed-m-abdelfatah.github.io/Valinteca-Frontend-Task-1/build/)\
-> wakatime: [HERE](https://wakatime.com/@ahmed_m_abdelfatah/projects/lghpxyynwu)
+> wakatime: [HERE](https://wakatime.com/@ahmed_m_abdelfatah/projects/lghpxyynwu?start=2022-12-04&end=2022-12-10)

@@ -2,10 +2,20 @@
 <html lang="en">
 
 <head>
+  <script>
+    function redirect() {
+      const data = JSON.parse(localStorage.getItem('userObj'));
+      if (data.id.length > 0) {
+        window.location.href = './home.html';
+      }
+    }
+    redirect()
+  </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/all.min.css">
+  <link rel="icon" type="image/png" href="/assets//img/01.png" />
   <title>register</title>
 </head>
 
