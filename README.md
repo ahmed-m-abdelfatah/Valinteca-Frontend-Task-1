@@ -4,7 +4,7 @@
 - [X] register screen ui
 - [X] home screen ui
 - [X] validation without any libraries
-- [ ] api request  -> error 405 waiting...
+- [X] api request
 - [ ] show api errors
 - [ ] authentication on home.html
 - [ ] logout

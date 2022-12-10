@@ -17,8 +17,9 @@ const regex = {
       'Username must consist of 5 to 15 characters, only letters and numbers are allowed, with no numbers at the beginning or the end',
   },
   password: {
-    pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
-    errorMsg: 'Password minimum eight characters, at least one letter and one number',
+    pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+    errorMsg:
+      'Password minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character',
   },
 };
 
@@ -83,7 +84,11 @@ async function apiReq() {
 
   console.log('reqBody', reqBody);
   let res = await fetch('https://goldblv.com/api/hiring/tasks/register', {
-    mode: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    method: 'POST',
     body: JSON.stringify(reqBody),
   });
 
@@ -91,22 +96,21 @@ async function apiReq() {
 }
 
 // event
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
 
   // clearErrors
   clearErrors(inputs);
 
   // checkRequired
-  if (areAllFieldsHaveContent(inputs) === true) {
-    let check1 = isVaLidPattern(regex.username, inputs.username);
-    let check2 = isVaLidPattern(regex.email, inputs.email);
-    let check3 = isVaLidPattern(regex.password, inputs.password);
-    let check4 = areTwoPasswordsTheSame(inputs.password.value, inputs.cPassword.value);
+  let check1 = isVaLidPattern(regex.username, inputs.username);
+  let check2 = isVaLidPattern(regex.email, inputs.email);
+  let check3 = isVaLidPattern(regex.password, inputs.password);
+  let check4 = areTwoPasswordsTheSame(inputs.password.value, inputs.cPassword.value);
+  let check5 = areAllFieldsHaveContent(inputs);
 
-    if (check1 && check2 && check3 && check4) {
-      apiReq();
-      console.log('api call');
-    }
+  if (check1 && check2 && check3 && check4 && check5) {
+    await apiReq();
+    console.log('api call');
   }
 });
